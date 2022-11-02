@@ -1,0 +1,66 @@
+Configura Centralina - Richiesta SOAP
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mon="monitoraggio.ambientale">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mon:ConfiguraCentralina>
+         <!--Optional:-->
+         <mon:stringaJson>{"identificatoreCentralina": "A1234BCD1E", "Localita":"Milano", "Umidita": true, "Pressione": true, "Precipitazioni": true, "Direzione_Vento": true}</mon:stringaJson>
+      </mon:ConfiguraCentralina>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Configura Centralina - Risposta SOAP
+
+<soap11env:Envelope xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="monitoraggio.ambientale">
+   <soap11env:Body>
+      <tns:ConfiguraCentralinaResponse>
+         <tns:ConfiguraCentralinaResult>OK!</tns:ConfiguraCentralinaResult>
+      </tns:ConfiguraCentralinaResponse>
+   </soap11env:Body>
+</soap11env:Envelope>
+
+Memorizza Rilevazione - Richiesta SOAP
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mon="monitoraggio.ambientale">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mon:MemorizzaRilevazione>
+         <!--Optional:-->
+         <mon:stringaJson>{"Temperatura": 9, "Pressione": 9, "identificatoreCentralina": "A1234BCD1E" }</mon:stringaJson>
+      </mon:MemorizzaRilevazione>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Memorizza Rilevazione - Risposta SOAP
+
+<soap11env:Envelope xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="monitoraggio.ambientale">
+   <soap11env:Body>
+      <tns:MemorizzaRilevazioneResponse>
+         <tns:MemorizzaRilevazioneResult>OK!</tns:MemorizzaRilevazioneResult>
+      </tns:MemorizzaRilevazioneResponse>
+   </soap11env:Body>
+</soap11env:Envelope>
+
+Request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mon="monitoraggio.ambientale">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mon:GetConfCentralina>
+         <!--Optional:-->
+         <mon:identificatoreCentralina>A1234BCD1E</mon:identificatoreCentralina>
+      </mon:GetConfCentralina>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+<soap11env:Envelope xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="monitoraggio.ambientale">
+   <soap11env:Body>
+      <tns:GetConfCentralinaResponse>
+         <tns:GetConfCentralinaResult>{"identificatoreCentralina":"A1234BCD1E","Localita":"Cosenza","Temperatura":True,"Pressione":False,"Umidita":True,"Precipitazioni":False,"Velocita_Vento":True,"Direzione_Vento":True}</tns:GetConfCentralinaResult>
+      </tns:GetConfCentralinaResponse>
+   </soap11env:Body>
+</soap11env:Envelope>
