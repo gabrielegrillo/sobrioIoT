@@ -13,4 +13,4 @@ In this project we used Python for the SOAP Webservice with Spyne framework (inc
 Each message between control units and the webserver is decoded in JSON.
 
 ## Special Thanks
-Thanks to Giuseppe Nucifora and the teacher Paolo Mangraviti for contributing in this project <3
+Thanks to the teacher Paolo Mangraviti for leading and contributing in this project <3
